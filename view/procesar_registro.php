@@ -26,10 +26,8 @@ $consulta = "INSERT INTO usuario(nombre_completo, correo, telefono, contrasena) 
 
 if ($conexion->query($consulta) === TRUE) {
     echo "Registro exitoso";
-    header("Location: home.php");
 } else {
     echo "Error al registrar: " . $conexion->error;
-    header("Location: login.php");
 }
 
 $conexion->close();

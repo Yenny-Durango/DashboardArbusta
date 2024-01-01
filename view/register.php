@@ -41,39 +41,39 @@
                                     <form method="post" action="assets/php/procesar_registro.php" onsubmit="return validarFormularioRegistro()">
                                         <!-- Campo de entrada para el nombre -->
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="nombre" name="nombre" type="text" placeholder="nombre" />
+                                            <input class="form-control" id="nombre" name="nombre" type="text" placeholder="nombre" value="Teresa"/>
                                             <label for="nombre">Nombre</label>
                                         </div>
                                         <!-- Campo de entrada para el apellido -->
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="apellido" name="apellido" type="text" placeholder="apellido" />
+                                            <input class="form-control" id="apellido" name="apellido" type="text" placeholder="apellido" value="Fernadez"/>
                                             <label for="apellido">Apellido</label>
                                         </div>
                                         <!-- Campo de entrada para el correo electrónico -->
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="correo" name="correo" type="email" placeholder="name@arbusta.net" />
+                                            <input class="form-control" id="correo" name="correo" type="email" placeholder="name@arbusta.net" value="teresa.fernadez@arbusta.net"/>
                                             <label for="correo">Correo</label>
                                         </div>
                                         <!-- Campo de entrada para el telefono -->
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="telefono" name="telefono" type="number" placeholder="telefono" />
+                                            <input class="form-control" id="telefono" name="telefono" type="number" placeholder="telefono" value="1234567890"/>
                                             <label for="telefono">Telefono</label>
                                         </div>
                                         <!-- Campo de entrada para la contrasena -->
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="contrasena" name="contrasena" type="password" placeholder="contrasena" />
+                                            <input class="form-control" id="contrasena" name="contrasena" type="password" placeholder="contrasena" value="Teresa123"/>
                                             <label for="contrasena">Contraseña</label>
                                         </div>
                                         <!-- Campo de entrada para confirmar la contrasena -->
                                         <div class="form-floating mb-3">
-                                            <input class="form-control" id="confirmarcontrasena" name="confirmarcontrasena" type="password" placeholder="confirmarcontrasena" />
+                                            <input class="form-control" id="confirmarcontrasena" name="confirmarcontrasena" type="password" placeholder="confirmarcontrasena" value="Teresa123"/>
                                             <label for="confirmarcontrasena">Confirmar contrasena</label>
                                         </div>
                                         <button type="button" id="verContrasena" class="ver-contraseña" title="Ver contraseña"><i class="fa-solid fa-eye"></i> Ver contraseña</button>
                                         <!-- Botón para enviar el formulario -->
                                         <div class="mt-4 mb-0">
                                             <div class="d-grid">
-                                            <button type="submit" value="Registrarse" class="btn btn-primary" id="btnRegistrarse">Registrarse</button>
+                                            <button type="submit" class="btn btn-primary" id="btnRegistrarse">Registrarse</button>
                                             </div>
                                         </div>
                                     </form>

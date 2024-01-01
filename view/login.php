@@ -1,9 +1,3 @@
-<?php
-session_start();
-include("./php/iniciarsesion.php");
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -42,22 +36,21 @@ include("./php/iniciarsesion.php");
                                 </div>
                                 <!-- Cuerpo de la tarjeta con el formulario de inicio de sesión -->
                                 <div class="card-body">
-                                    <form method="post" action="" onsubmit="return validarFormulario()">
+                                    <form method="post" action="iniciarsesion.php" onsubmit="return validarFormularioLogin()">
                                         <!-- Campos de entrada para el correo y la contrasena -->
                                         <div class="form-floating mb-3">
-                                            <input type="email" name="correo" id="correo" pattern=".+@arbusta\.net" required class="form-control" placeholder="Correo">
+                                            <input class="form-control" id="correo" name="correo" type="email" placeholder="name@arbusta.net" />
                                             <label for="correo">Correo</label>
-
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="password" name="contrasena" id="contrasena" pattern=".{6,15}" title="La contraseña debe tener entre 6 y 8 caracteres" required class="form-control" placeholder="Contraseña">
-                                            <button type="button" id="verContrasena" class="ver-contraseña" title="Ver contraseña"><i class="fa-solid fa-eye"></i> Ver contraseña</button>
+                                            <input class="form-control" id="contrasena" name="contrasena" type="password" placeholder="contrasena"/>
+                                            <span >Ver contraseña</span>
                                             <label for="contrasena">Contraseña</label>
                                         </div>
                                         <!-- Enlaces y botón para enviar el formulario -->
                                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                             <a href="password.php">¿Olvidaste la contrasena?</a>
-                                            <button type="submit" value="Ingresar" class="btn btn-primary" id="btnIngresar" onclick="mostrarSweetAlertLogin()" disabled>Ingresar</button>
+                                            <button type="submit" class="btn btn-primary" id="btnIngresar">Ingresar</button>
                                         </div>
                                         <br>
                                         <div class="card">
@@ -79,15 +72,12 @@ include("./php/iniciarsesion.php");
     <!-- Inclusión de Bootstrap y script personalizado -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <!-- Inclusión de la biblioteca Font Awesome para iconos -->
-    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-
-    <script src="./assets/js/validaciones.js"></script>
+    <script src="assets/js/validaciones.js"></script>
     <script src="assets/js/scripts.js"></script>
     <script src="assets/js/myscript.js"></script>
+
+    <!-- CDN SWEETALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

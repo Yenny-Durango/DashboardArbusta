@@ -1,26 +1,29 @@
-// validaciones login
-document.addEventListener('DOMContentLoaded', function () {
-    var correoInput = document.getElementById('correo');
-    var contrasenaInput = document.getElementById('contrasena');
-    var btnIngresar = document.getElementById('btnIngresar');
+// VALIDACIONES LOGIN
+function validarFormularioLogin() {
+    var correo = document.getElementById('correo').value.trim();
+    var contrasena = document.getElementById('contrasena').value;
 
-    correoInput.addEventListener('input', validarCampos);
-    contrasenaInput.addEventListener('input', validarCampos);
-
-    function validarCampos() {
-        // Verifica si ambos campos están llenos
-        var camposLlenos = correoInput.value.trim() !== '' && contrasenaInput.value.trim() !== '';
-
-        // Verifica el formato del correo
-        var formatoCorreoCorrecto = correoInput.checkValidity();
-
-        // Verifica la longitud y formato de la contraseña
-        var formatoContrasenaCorrecto = contrasenaInput.checkValidity();
-
-        // Habilita/deshabilita el botón según el estado de los campos
-        btnIngresar.disabled = !camposLlenos || !formatoCorreoCorrecto || !formatoContrasenaCorrecto;
+    // Validar que todos los campos obligatorios estén llenos
+    if (correo === '' || contrasena === '') {
+        AlertaCamposObligatorios();
+        return false;
     }
-});
+
+    // Validar el formato del correo
+    if (!correo.endsWith('@arbusta.net')) {
+        AlertaFormatoCorreo();
+        return false;
+    }
+
+    // Validar longitud de la contraseña
+    if (contrasena.length < 6 || contrasena.length > 20) {
+        AlertaContraseña();
+        return false;
+    }
+
+    // Si todas las validaciones pasan, puedes enviar el formulario
+    return true;
+}
 
 // VALIDACIONES REGISTRO
 function validarFormularioRegistro() {
@@ -60,7 +63,7 @@ function validarFormularioRegistro() {
         AlertaTelefono();
         return false;
     }
-    
+
     // Si todas las validaciones pasan, puedes enviar el formulario
     return true;
 }
@@ -134,14 +137,6 @@ function Metodo(pagina) {
     );
 };
 
-function mostrarSweetAlertLogin() {
-    // Puedes personalizar el mensaje según tus necesidades
-    Swal.fire({
-        icon: 'success',
-        title: '¡Formulario enviado!',
-        text: 'Tu formulario ha sido enviado correctamente.',
-    });
-}
 
 
 
